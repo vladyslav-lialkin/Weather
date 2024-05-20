@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct WeatherApp: App {
+    @StateObject private var weatherVM = WeatherViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WeatherView()
+                .environmentObject(weatherVM)
+                .preferredColorScheme(.light)
         }
     }
 }
