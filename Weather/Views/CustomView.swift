@@ -16,7 +16,7 @@ struct CustomView<Content: View, Header: View>: View {
     var body: some View {
         GeometryReader { geometry in
             let minY = geometry.frame(in: .global).minY
-            let offset = -(minY - 300) > 0 ? -(minY - 300) : 0
+            let offset = -(minY - 140) > 0 ? -(minY - 140) : 0
             let height = (geometry.size.height - offset)
             
             RoundedRectangle(cornerRadius: 15.0)
@@ -51,4 +51,5 @@ struct CustomView<Content: View, Header: View>: View {
 
 #Preview {
     WeatherView()
+        .environmentObject(WeatherViewModel())
 }
