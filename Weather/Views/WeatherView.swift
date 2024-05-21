@@ -23,7 +23,7 @@ struct WeatherView: View {
             .padding(.horizontal)
             .modifier(ScrollContentBackgroundHiddenModifier())
         }
-        .background(weatherVM.backgroundColor)
+        .background(BackgroundView(isNight: $weatherVM.isNight))
     }
 }
 
