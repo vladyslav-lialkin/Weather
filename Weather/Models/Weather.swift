@@ -55,6 +55,7 @@ struct Hour: Codable, Identifiable {
     var time_epoch: Int
     var time: String
     var temp_c: Double
+    var is_day: Int
     var condition: Condition
     
     func getShortTime() -> String {
