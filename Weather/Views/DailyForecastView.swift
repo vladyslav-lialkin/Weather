@@ -25,9 +25,12 @@ struct DailyForecastView: View {
                             .fontWeight(.medium)
                             .frame(width: 70, alignment: .leading)
 
-                        Text("\(weatherVM.getWeatherEmoji(code: forecast.day.condition.code))")
-                            .font(.title)
-                            .frame(width: 30, height: 30, alignment: .leading)
+                        Image(systemName: weatherVM.getWeatherSF(code: forecast.day.condition.code,
+                                                                    isDay: weatherVM.results.first?.id == forecast.id ? forecast.hour.first?.is_day : nil))
+                            .renderingMode(.original)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 22, height: 22, alignment: .center)
                         
                         Spacer()
                         
@@ -49,6 +52,7 @@ struct DailyForecastView: View {
                             .frame(width: 40, alignment: .trailing)
                     }
                     .padding(.vertical, 0.1)
+                    .frame(height: 30)
                 }
             }
             .foregroundStyle(.white)

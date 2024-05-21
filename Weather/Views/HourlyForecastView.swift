@@ -26,15 +26,17 @@ struct HourlyForecastView: View {
                                     .font(.system(size: 14))
                                     .fontWeight(.bold)
                                 
-                                Text(weatherVM.getWeatherEmoji(code: forecast.condition.code))
-                                    .font(.title)
-                                    .frame(width: 30, height: 30, alignment: .leading)
-                                    .padding(.vertical, 4)
+                                Image(systemName: weatherVM.getWeatherSF(code: forecast.condition.code, isDay: forecast.is_day))
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 22, height: 22, alignment: .leading)
+                                    .padding(.vertical, 10)
                                 
                                 Text(" \(Int(forecast.temp_c))˚")
                                     .font(.title3)
                             }
-                            .padding(.trailing, forecast.id == weatherVM.hourlyForecast.last?.id ? 0 : 20)
+                            .padding(.trailing, forecast.id == weatherVM.hourlyForecast.last?.id ? 0 : 15)
                         }
                     }
                 }
