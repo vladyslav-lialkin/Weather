@@ -20,6 +20,7 @@
 		32CD35782BDC318100911EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CD35772BDC318100911EEB /* Assets.xcassets */; };
 		32CD357B2BDC318100911EEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CD357A2BDC318100911EEB /* Preview Assets.xcassets */; };
 		32CE58202BED50160082159F /* WeatherSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CE581F2BED50160082159F /* WeatherSummaryView.swift */; };
+		32EFCB022BFD38BE0042A706 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFCB012BFD38BE0042A706 /* BackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		32CD357A2BDC318100911EEB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32CD35862BDC32BF00911EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32CE581F2BED50160082159F /* WeatherSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSummaryView.swift; sourceTree = "<group>"; };
+		32EFCB012BFD38BE0042A706 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				32CE581F2BED50160082159F /* WeatherSummaryView.swift */,
 				32C377BD2BEE99A0003179EA /* HourlyForecastView.swift */,
 				3278ABC02BF3C4EE00343573 /* DailyForecastView.swift */,
+				32EFCB012BFD38BE0042A706 /* BackgroundView.swift */,
 				3264DAEC2BE2254E000DBB32 /* CustomView.swift */,
 				320255A62BF6496D0095CB95 /* CustomProgressViewStyle.swift */,
 			);
@@ -232,6 +235,7 @@
 				320255A72BF6496D0095CB95 /* CustomProgressViewStyle.swift in Sources */,
 				32CE58202BED50160082159F /* WeatherSummaryView.swift in Sources */,
 				3264DAED2BE2254E000DBB32 /* CustomView.swift in Sources */,
+				32EFCB022BFD38BE0042A706 /* BackgroundView.swift in Sources */,
 				32CD35742BDC317F00911EEB /* WeatherApp.swift in Sources */,
 				32C377BC2BEE4416003179EA /* HttpClient.swift in Sources */,
 				32A55A4E2BDE6B5800692FBD /* ScrollContentBackgroundHiddenModifier.swift in Sources */,
