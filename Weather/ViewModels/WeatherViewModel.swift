@@ -51,7 +51,7 @@ class WeatherViewModel: ObservableObject {
             }
         }
         
-        isNight = hourlyForecast.first?.is_day == 0 ? false : true
+        isNight = hourlyForecast.first?.is_day == 0 ? true : false
     }
     
     func getWeatherSF(code: Int, isDay: Int?) -> String {
