@@ -25,6 +25,9 @@ class WeatherViewModel: ObservableObject {
     }
     
     func fetchWeather() async throws {
+//        guard let url = URL(string: "http://api.weatherapi.com/v1/forecast.json?key=47228454f16f4ff393d181335242604&q=Los Angeles&days=10&aqi=no&alerts=no") else {
+//            throw HttpError.badURL
+//        }
         guard let url = URL(string: "http://api.weatherapi.com/v1/forecast.json?key=47228454f16f4ff393d181335242604&q=Ukraine,Zdolbuniv&days=10&aqi=no&alerts=no") else {
             throw HttpError.badURL
         }
@@ -40,18 +43,19 @@ class WeatherViewModel: ObservableObject {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH"
+//            dateFormatter.timeZone = TimeZone(identifier: "America/Los_Angeles")
             let hourNow = dateFormatter.string(from: Date())
             
             hourlyForecast = results[0].hour.filter { hour in
                 return hour.getShortTime() >= hourNow
             }
             
-            hourlyForecast += results[0].hour.filter { hour in
+            hourlyForecast += results[1].hour.filter { hour in
                 return hour.getShortTime() <= hourNow
             }
+            
+            isNight = hourlyForecast.first?.is_day == 0 ? true : false
         }
-        
-        isNight = hourlyForecast.first?.is_day == 0 ? true : false
     }
     
     func getWeatherSF(code: Int, isDay: Int?) -> String {
