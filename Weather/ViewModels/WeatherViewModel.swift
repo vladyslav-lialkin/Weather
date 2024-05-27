@@ -57,6 +57,7 @@ class WeatherViewModel: ObservableObject {
             }
             
             isNight = hourlyForecast.first?.is_day == 0 ? true : false
+            loading = false
         }
     }
     

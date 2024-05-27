@@ -16,10 +16,15 @@ struct WeatherView: View {
             ScrollView(showsIndicators: false) {
                 WeatherSummaryView()
                 
-                HourlyForecastView()
-                
-                DailyForecastView()
+                if !weatherVM.loading {
+                    HourlyForecastView()
+                    
+                    DailyForecastView()
+                    
+                    MapForecastView()
+                }
             }
+            .frame(maxWidth: .infinity)
             .padding(.horizontal)
             .modifier(ScrollContentBackgroundHiddenModifier())
         }
