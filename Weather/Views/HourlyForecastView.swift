@@ -26,11 +26,14 @@ struct HourlyForecastView: View {
                                     .font(.system(size: 14))
                                     .fontWeight(.bold)
                                 
-                                Image(systemName: weatherVM.getWeatherSF(code: forecast.condition.code, isDay: forecast.is_day))
+                                let weatherSF = weatherVM.getWeatherSF(code: forecast.condition.code, isDay: forecast.is_day)
+                                Image(systemName: weatherSF)
                                     .renderingMode(.original)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 22, height: 22, alignment: .leading)
+                                    .frame(width: 22,
+                                           height: weatherSF == "cloud.fill" ? 17 : 22,
+                                           alignment: .center)
                                     .padding(.vertical, 10)
                                 
                                 Text(" \(Int(forecast.temp_c))˚")

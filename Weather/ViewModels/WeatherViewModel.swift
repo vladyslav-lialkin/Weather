@@ -13,9 +13,10 @@ class WeatherViewModel: ObservableObject {
     @Published var hourlyForecast = [Hour]()
     
     @Published var isNight = false
+    @Published var cityName = ""
     @Published var currentTemp = "--"
     @Published var conditionText = ""
-    @Published var cityName = ""
+    @Published var highAndLowTemp = ""
     @Published var loading = true
     
     init() {
@@ -25,7 +26,7 @@ class WeatherViewModel: ObservableObject {
     }
     
     func fetchWeather() async throws {
-//        guard let url = URL(string: "http://api.weatherapi.com/v1/forecast.json?key=47228454f16f4ff393d181335242604&q=Los Angeles&days=10&aqi=no&alerts=no") else {
+//        guard let url = URL(string: "http://api.weatherapi.com/v1/forecast.json?key=47228454f16f4ff393d181335242604&q=LosAngeles&days=10&aqi=no&alerts=no") else {
 //            throw HttpError.badURL
 //        }
         guard let url = URL(string: "http://api.weatherapi.com/v1/forecast.json?key=47228454f16f4ff393d181335242604&q=Ukraine,Zdolbuniv&days=10&aqi=no&alerts=no") else {
@@ -40,6 +41,7 @@ class WeatherViewModel: ObservableObject {
             results = weather.forecast.forecastday
             currentTemp = " \(Int(results[0].day.avgtemp_c))°"
             conditionText = results[0].day.condition.text
+            highAndLowTemp = "H:\(Int(results[0].day.maxtemp_c))° L:\(Int(results[0].day.mintemp_c))°"
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH"

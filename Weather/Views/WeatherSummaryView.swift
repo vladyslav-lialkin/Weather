@@ -41,7 +41,7 @@ struct WeatherSummaryView: View {
                     .fontWeight(.medium)
                     .frame(height: 22)
                     .opacity((height) <= 240 ? (height - 210) / 30.0 : 1.0)
-                Text("H:72° L:52°")
+                Text(weatherVM.highAndLowTemp)
                     .font(.system(size: 20))
                     .fontWeight(.medium)
                     .frame(height: 20)
