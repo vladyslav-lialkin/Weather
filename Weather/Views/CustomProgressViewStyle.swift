@@ -10,11 +10,14 @@ import SwiftUI
 struct CustomProgressViewStyle: ProgressViewStyle {
     
     let range: ClosedRange<Double>
+    let colors: [Color]
     let isShowProgressPoint: Bool
 
-    let foregroundColor = LinearGradient(colors: [Color(red: 0.39, green: 0.8, blue: 0.74),
-                                                  Color(red: 0.96, green: 0.8, blue: 0.0)],
-                                         startPoint: .leading, endPoint: .trailing)
+    var foregroundColor: LinearGradient {
+        LinearGradient(colors: colors,
+                       startPoint: .leading, endPoint: .trailing)
+    }
+    
     let backgroundColor = Color(red: 0.25, green: 0.35, blue: 0.72, opacity: 0.2)
     
     var fillWidthScale: Double {
@@ -74,7 +77,7 @@ extension View {
         let range = 0.0...(Double(1.0))
         ProgressView(value: 0.5)
             .frame(height: 5)
-            .progressViewStyle(CustomProgressViewStyle(range: range, isShowProgressPoint: true))
+            .progressViewStyle(CustomProgressViewStyle(range: range, colors: [.red], isShowProgressPoint: true))
     }
     .padding()
 }

@@ -44,6 +44,7 @@ struct DailyForecastView: View {
                             .frame(width: 100, height: 5, alignment: .trailing)
                             .progressViewStyle(CustomProgressViewStyle(
                                 range: (startRange)...(endRange > 1.0 ? 1.0 : endRange),
+                                colors: [Color(red: 0.39, green: 0.8, blue: 0.74), Color(red: 0.96, green: 0.8, blue: 0.0)],
                                 isShowProgressPoint: forecast.id == weatherVM.results.first?.id ? true : false)
                             )
                         

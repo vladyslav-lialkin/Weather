@@ -22,6 +22,11 @@ struct WeatherView: View {
                     DailyForecastView()
                     
                     MapForecastView()
+                    
+                    HStack {
+                        UVForecastView()
+                        UVForecastView()
+                    }
                 }
             }
             .frame(maxWidth: .infinity)
