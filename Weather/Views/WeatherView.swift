@@ -24,8 +24,8 @@ struct WeatherView: View {
                     MapForecastView()
                     
                     HStack {
-                        UVForecastView()
-                        UVForecastView()
+                        UVIndexView()
+                        UVIndexView()
                     }
                 }
             }

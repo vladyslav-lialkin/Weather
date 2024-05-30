@@ -14,7 +14,7 @@
 		32A55A4E2BDE6B5800692FBD /* ScrollContentBackgroundHiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A55A4D2BDE6B5800692FBD /* ScrollContentBackgroundHiddenModifier.swift */; };
 		32A55A502BDEACDA00692FBD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A55A4F2BDEACDA00692FBD /* WeatherViewModel.swift */; };
 		32A55A522BDEB00100692FBD /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A55A512BDEB00100692FBD /* Weather.swift */; };
-		32B6CDA32C061F2700B0B61A /* UVForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6CDA22C061F2700B0B61A /* UVForecastView.swift */; };
+		32B6CDA32C061F2700B0B61A /* UVIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6CDA22C061F2700B0B61A /* UVIndexView.swift */; };
 		32C377BC2BEE4416003179EA /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C377BB2BEE4415003179EA /* HttpClient.swift */; };
 		32C377BE2BEE99A0003179EA /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C377BD2BEE99A0003179EA /* HourlyForecastView.swift */; };
 		32CD35742BDC317F00911EEB /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD35732BDC317F00911EEB /* WeatherApp.swift */; };
@@ -33,7 +33,7 @@
 		32A55A4D2BDE6B5800692FBD /* ScrollContentBackgroundHiddenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContentBackgroundHiddenModifier.swift; sourceTree = "<group>"; };
 		32A55A4F2BDEACDA00692FBD /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		32A55A512BDEB00100692FBD /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		32B6CDA22C061F2700B0B61A /* UVForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVForecastView.swift; sourceTree = "<group>"; };
+		32B6CDA22C061F2700B0B61A /* UVIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexView.swift; sourceTree = "<group>"; };
 		32C377BB2BEE4415003179EA /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		32C377BD2BEE99A0003179EA /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
 		32CD35702BDC317F00911EEB /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +65,7 @@
 				32C377BD2BEE99A0003179EA /* HourlyForecastView.swift */,
 				3278ABC02BF3C4EE00343573 /* DailyForecastView.swift */,
 				327A3FF42C05023C003F5066 /* MapForecastView.swift */,
-				32B6CDA22C061F2700B0B61A /* UVForecastView.swift */,
+				32B6CDA22C061F2700B0B61A /* UVIndexView.swift */,
 				32EFCB012BFD38BE0042A706 /* BackgroundView.swift */,
 				3264DAEC2BE2254E000DBB32 /* CustomView.swift */,
 				320255A62BF6496D0095CB95 /* CustomProgressViewStyle.swift */,
@@ -235,7 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32B6CDA32C061F2700B0B61A /* UVForecastView.swift in Sources */,
+				32B6CDA32C061F2700B0B61A /* UVIndexView.swift in Sources */,
 				32A55A522BDEB00100692FBD /* Weather.swift in Sources */,
 				327A3FF52C05023C003F5066 /* MapForecastView.swift in Sources */,
 				3278ABC12BF3C4EE00343573 /* DailyForecastView.swift in Sources */,

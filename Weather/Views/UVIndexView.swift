@@ -1,5 +1,5 @@
 //
-//  UVForecastView.swift
+//  UVIndexView.swift
 //  Weather
 //
 //  Created by Влад Лялькін on 28.05.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UVForecastView: View {
+struct UVIndexView: View {
     
     @EnvironmentObject private var weatherVM: WeatherViewModel
     
