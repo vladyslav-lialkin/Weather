@@ -57,6 +57,7 @@ struct DailyForecastView: View {
                 }
             }
             .foregroundStyle(.white)
+            .padding(.horizontal)
         } header: {
             Label("10-DAY FORECAST", systemImage: "calendar")
         }

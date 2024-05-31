@@ -45,6 +45,7 @@ struct HourlyForecastView: View {
                 }
                 .foregroundStyle(.white)
             }
+            .padding(.horizontal)
         } header: {
             Label("HOURLY FORECAST", systemImage: "clock")
         }

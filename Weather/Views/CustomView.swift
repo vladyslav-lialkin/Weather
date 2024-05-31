@@ -34,13 +34,13 @@ struct CustomView<Content: View, Header: View>: View {
                                 .foregroundStyle(.white)
                                 .opacity(0.3)
                                 .offset(y: offset)
+                                .padding(.horizontal)
                             content
                                 .mask {
                                     Rectangle()
                                         .offset(y: offset)
                                 }
                         }
-                        .padding(.horizontal)
                     }
                 }
                 .opacity((height) <= 35 ? (height) / 35.0 : 1.0)

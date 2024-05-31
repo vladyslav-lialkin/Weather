@@ -38,6 +38,7 @@ struct UVIndexView: View {
                     .font(.system(size: 15))
             }
             .foregroundStyle(.white)
+            .padding(.horizontal)
         } header: {
             Label("UV INDEX", systemImage: "sun.max")
         }

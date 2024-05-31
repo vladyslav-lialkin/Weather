@@ -14,6 +14,7 @@ struct MapForecastView: View {
             MapRepresentable()
                 .frame(height: 300)
                 .clipShape(RoundedRectangle(cornerRadius: 7.0))
+                .padding(.horizontal)
         } header: {
             Label("PRECIPITATION", systemImage: "umbrella.fill")
         }
