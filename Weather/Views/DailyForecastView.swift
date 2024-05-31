@@ -25,8 +25,8 @@ struct DailyForecastView: View {
                             .fontWeight(.medium)
                             .frame(width: 70, alignment: .leading)
 
-                        Image(systemName: weatherVM.getWeatherSF(code: forecast.day.condition.code,
-                                                                 isDay: weatherVM.results.first?.id == forecast.id ?  weatherVM.hourlyForecast.first?.is_day : nil))
+                        Image(systemName: forecast.day.condition.getWeatherSF(isDay: weatherVM.results.first?.id == forecast.id ?
+                                                                                     weatherVM.hourlyForecast.first?.is_day : nil))
                             .renderingMode(.original)
                             .resizable()
                             .scaledToFill()

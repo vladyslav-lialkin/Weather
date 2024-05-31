@@ -26,7 +26,7 @@ struct HourlyForecastView: View {
                                     .font(.system(size: 14))
                                     .fontWeight(.bold)
                                 
-                                let weatherSF = weatherVM.getWeatherSF(code: forecast.condition.code, isDay: forecast.is_day)
+                                let weatherSF = forecast.condition.getWeatherSF(isDay: forecast.is_day)
                                 Image(systemName: weatherSF)
                                     .renderingMode(.original)
                                     .resizable()
