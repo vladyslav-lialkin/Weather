@@ -12,13 +12,13 @@ struct CustomProgressViewStyle: ProgressViewStyle {
     let range: ClosedRange<Double>
     let colors: [Color]
     let isShowProgressPoint: Bool
+    
+    let backgroundColor = Color(red: 0.25, green: 0.35, blue: 0.72, opacity: 0.2)
 
     var foregroundColor: LinearGradient {
         LinearGradient(colors: colors,
                        startPoint: .leading, endPoint: .trailing)
     }
-    
-    let backgroundColor = Color(red: 0.25, green: 0.35, blue: 0.72, opacity: 0.2)
     
     var fillWidthScale: Double {
         let normalizedRange = range.upperBound - range.lowerBound

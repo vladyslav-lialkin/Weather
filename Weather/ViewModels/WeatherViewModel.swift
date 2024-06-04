@@ -26,7 +26,7 @@ class WeatherViewModel: ObservableObject {
     }
     
     func fetchWeather() async throws {
-//        guard let url = URL(string: "http://api.weatherapi.com/v1/forecast.json?key=47228454f16f4ff393d181335242604&q=LosAngeles&days=10&aqi=no&alerts=no") else {
+//        guard let url = URL(string: "http://api.weatherapi.com/v1/forecast.json?key=47228454f16f4ff393d181335242604&q=Los Angeles&days=10&aqi=no&alerts=no") else {
 //            throw HttpError.badURL
 //        }
         guard let url = URL(string: "http://api.weatherapi.com/v1/forecast.json?key=47228454f16f4ff393d181335242604&q=Ukraine,Zdolbuniv&days=10&aqi=no&alerts=no") else {

@@ -11,6 +11,7 @@ struct ForecastDay: Codable, Identifiable {
     var id: Int { date_epoch }
     var date_epoch: Int
     var day: Day
+    var astro: Astro
     var hour: [Hour]
     
     func getShortDate() -> String {

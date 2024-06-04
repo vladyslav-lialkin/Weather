@@ -36,6 +36,8 @@ struct UVIndexView: View {
                 
                 Text(weatherVM.hourlyForecast.first?.getUVSubtitle().1 ?? "")
                     .font(.system(size: 15))
+                    .frame(height: 36)
+                    .padding(.bottom)
             }
             .foregroundStyle(.white)
             .padding(.horizontal)
