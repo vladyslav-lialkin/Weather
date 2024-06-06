@@ -78,7 +78,7 @@ struct WaveView: View {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
 
-        return CGFloat(12) * (proxy.size.width / 24)
+        return CGFloat(hour) * (proxy.size.width / 24)
     }
 }
 
