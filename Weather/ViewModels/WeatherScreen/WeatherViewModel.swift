@@ -9,10 +9,10 @@ import SwiftUI
 
 class WeatherViewModel: ObservableObject {
     
-    @Published var weather: Weather?
-    
     @Published var isNight = false
     @Published var loading = true
+    
+    var weather: Weather?
     
     init() {
         Task {

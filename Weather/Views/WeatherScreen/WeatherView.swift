@@ -29,6 +29,15 @@ struct WeatherView: View {
                     }
                     
                     WindView(viewModel)
+                    
+                    HStack {
+                        FeelsLikeView(viewModel)
+                        FeelsLikeView(viewModel)
+                    }
+                    
+                    DailyForecastView(viewModel)
+                    DailyForecastView(viewModel)
+                    DailyForecastView(viewModel)
                 }
             }
             .frame(maxWidth: .infinity)

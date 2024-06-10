@@ -41,6 +41,8 @@
 		32CD35782BDC318100911EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CD35772BDC318100911EEB /* Assets.xcassets */; };
 		32CD357B2BDC318100911EEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CD357A2BDC318100911EEB /* Preview Assets.xcassets */; };
 		32CE58202BED50160082159F /* WeatherSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CE581F2BED50160082159F /* WeatherSummaryView.swift */; };
+		32D27FAD2C1765F200AE432D /* FeelsLikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D27FAC2C1765F200AE432D /* FeelsLikeView.swift */; };
+		32D27FAF2C1766DC00AE432D /* FeelsLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D27FAE2C1766DC00AE432D /* FeelsLikeViewModel.swift */; };
 		32ED50CC2C171D4A00EE77BD /* UVIndexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ED50CB2C171D4A00EE77BD /* UVIndexViewModel.swift */; };
 		32ED50CE2C17236D00EE77BD /* SunTrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ED50CD2C17236D00EE77BD /* SunTrackerViewModel.swift */; };
 		32ED50D02C17262000EE77BD /* WindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ED50CF2C17262000EE77BD /* WindViewModel.swift */; };
@@ -84,6 +86,8 @@
 		32CD357A2BDC318100911EEB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32CD35862BDC32BF00911EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32CE581F2BED50160082159F /* WeatherSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSummaryView.swift; sourceTree = "<group>"; };
+		32D27FAC2C1765F200AE432D /* FeelsLikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelsLikeView.swift; sourceTree = "<group>"; };
+		32D27FAE2C1766DC00AE432D /* FeelsLikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelsLikeViewModel.swift; sourceTree = "<group>"; };
 		32ED50CB2C171D4A00EE77BD /* UVIndexViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexViewModel.swift; sourceTree = "<group>"; };
 		32ED50CD2C17236D00EE77BD /* SunTrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunTrackerViewModel.swift; sourceTree = "<group>"; };
 		32ED50CF2C17262000EE77BD /* WindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindViewModel.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				3230AAFC2C1616EA0053074F /* UVIndex */,
 				3230AAF02C15FBDE0053074F /* SunTracker */,
 				3230AAF12C15FC1D0053074F /* Wind */,
+				32D27FAB2C1765C200AE432D /* FeelsLike */,
 				3230AAFB2C1616C60053074F /* AdditionalViews */,
 			);
 			path = WeatherScreen;
@@ -172,6 +177,7 @@
 				32ED50CB2C171D4A00EE77BD /* UVIndexViewModel.swift */,
 				32ED50CD2C17236D00EE77BD /* SunTrackerViewModel.swift */,
 				32ED50CF2C17262000EE77BD /* WindViewModel.swift */,
+				32D27FAE2C1766DC00AE432D /* FeelsLikeViewModel.swift */,
 			);
 			path = WeatherScreen;
 			sourceTree = "<group>";
@@ -323,6 +329,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		32D27FAB2C1765C200AE432D /* FeelsLike */ = {
+			isa = PBXGroup;
+			children = (
+				32D27FAC2C1765F200AE432D /* FeelsLikeView.swift */,
+			);
+			path = FeelsLike;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,6 +414,7 @@
 				3230AAFA2C1600F10053074F /* WeatherSummaryViewModel.swift in Sources */,
 				32B6CDA32C061F2700B0B61A /* UVIndexView.swift in Sources */,
 				3230AB032C161C670053074F /* DailyForecastViewModel.swift in Sources */,
+				32D27FAF2C1766DC00AE432D /* FeelsLikeViewModel.swift in Sources */,
 				32A55A522BDEB00100692FBD /* Weather.swift in Sources */,
 				3230AAF52C15FEAB0053074F /* DashCircle.swift in Sources */,
 				3230AAEE2C15FB6E0053074F /* MapRepresentable.swift in Sources */,
@@ -421,6 +436,7 @@
 				32EFCB022BFD38BE0042A706 /* BackgroundView.swift in Sources */,
 				32B6E63B2C0B66FE0057F039 /* Astro.swift in Sources */,
 				3230AAF72C15FF780053074F /* ArrowShape.swift in Sources */,
+				32D27FAD2C1765F200AE432D /* FeelsLikeView.swift in Sources */,
 				32ED50D02C17262000EE77BD /* WindViewModel.swift in Sources */,
 				324AE9DD2C121F690053C4AC /* Current.swift in Sources */,
 				32CD35742BDC317F00911EEB /* WeatherApp.swift in Sources */,
