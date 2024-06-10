@@ -9,20 +9,7 @@ import SwiftUI
 
 struct SunTrackerView: View {
     
-    @EnvironmentObject private var weatherVM: WeatherViewModel
-    
-    private var astro: Astro {
-        weatherVM.results.first?.astro ?? Astro(sunrise: "", sunset: "")
-    }
-    
-    var sunCycle: (time: String, isSunrise: Bool) {
-        astro.isSunRisingOrSetting()
-    }
-    
-    var nextSunCycle: (sunrise: String, sunset: String) {
-        astro.convertTo24HourFormat()
-    }
-    
+    @ObservedObject var viewModel: SunTrackerViewModel
     
     var body: some View {
         CustomView(height: 170) {
@@ -32,14 +19,14 @@ struct SunTrackerView: View {
                     .frame(height: 140)
                 
                 VStack(alignment: .leading) {
-                    Text(sunCycle.time)
+                    Text(viewModel.currentSunCycle.time)
                         .font(.largeTitle)
                         .padding(.top, 3)
                         .padding(.leading)
                     
                     Spacer()
                     
-                    Text(sunCycle.isSunrise ? "Sunset: \(nextSunCycle.sunset)" : "Sunrise: \(nextSunCycle.sunrise)")
+                    Text(viewModel.getNextSunCycle())
                         .font(.system(size: 15))
                         .padding(.leading)
                         .padding(.bottom)
@@ -47,12 +34,16 @@ struct SunTrackerView: View {
                 .foregroundStyle(.white)
             }
         } header: {
-            if sunCycle.isSunrise {
+            if viewModel.currentSunCycle.isSunrise {
                 Label("SUNRISE", systemImage: "sunrise.fill")
             } else {
                 Label("SUNSET", systemImage: "sunset.fill")
             }
         }
+    }
+    
+    init(_ viewModel: WeatherViewModel) {
+        self.viewModel = SunTrackerViewModel(viewModel: viewModel)
     }
 }
 

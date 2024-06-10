@@ -12,7 +12,6 @@ struct CustomProgressViewStyle: ProgressViewStyle {
     let range: ClosedRange<Double>
     let colors: [Color]
     let isShowProgressPoint: Bool
-    
     let backgroundColor = Color(red: 0.25, green: 0.35, blue: 0.72, opacity: 0.2)
 
     var foregroundColor: LinearGradient {
@@ -52,22 +51,6 @@ struct CustomProgressViewStyle: ProgressViewStyle {
                 }
             }
             .clipped()
-        }
-    }
-}
-
-extension View {
-    @inlinable
-    public func reverseMask<Mask: View>(
-        alignment: Alignment = .center,
-        @ViewBuilder _ mask: () -> Mask
-    ) -> some View {
-        self.mask {
-            Rectangle()
-                .overlay(alignment: alignment) {
-                    mask()
-                        .blendMode(.destinationOut)
-                }
         }
     }
 }

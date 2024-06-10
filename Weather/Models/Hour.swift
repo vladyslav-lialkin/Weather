@@ -14,7 +14,6 @@ struct Hour: Codable, Identifiable {
     var temp_c: Double
     var is_day: Int
     var condition: Condition
-    var uv: Double
     
     func getShortTime() -> String {
         let dateFormatter = DateFormatter()
@@ -32,23 +31,6 @@ struct Hour: Codable, Identifiable {
             }
         } else {
             return ""
-        }
-    }
-    
-    func getUVSubtitle() -> (String, String) {
-        switch uv {
-        case 0...2:
-            return ("Low", "Minimal risk. No protection needed.")
-        case 3...5:
-            return ("Moderate", "Moderate risk. Use sunscreen.")
-        case 6...7:
-            return ("High", "High risk. Protect skin and eyes.")
-        case 8...10:
-            return ("Very high", "Very high risk. Avoid sun exposure.")
-        case 11...:
-            return ("Extreme", "Extreme risk. Stay in shade.")
-        default:
-            return ("", "")
         }
     }
 }

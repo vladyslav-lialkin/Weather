@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeatherSummaryView: View {
     
-    @EnvironmentObject private var weatherVM: WeatherViewModel
+    @ObservedObject var viewModel: WeatherSummaryViewModel
     @State private var startY: CGFloat = 0.0
     
     var body: some View {
@@ -21,31 +21,34 @@ struct WeatherSummaryView: View {
             let height = (geometry.size.height - offset)
             
             VStack(spacing: 0) {
-                Text(weatherVM.cityName)
+                Text(viewModel.cityName)
                     .font(.system(size: 32))
                     .frame(height: 32)
+                
                 ZStack(alignment: .top) {
-                    Text(weatherVM.currentTemp + " | " + weatherVM.conditionText)
+                    Text(viewModel.currentTempAndConditionText)
                         .font(.system(size: 22))
                         .fontWeight(.medium)
-                        .opacity((adjustedMinY) <= 170 ? (adjustedMinY - 140) / 30.0 : 1.0)
+                        .opacity(viewModel.getOpacityValue(adjustedMinY, 170, 140))
                     
-                    Text(weatherVM.currentTemp)
+                    Text(viewModel.currentTemp)
                         .font(.system(size: 100))
                         .fontWeight(.thin)
                         .frame(height: 100)
-                        .opacity((height) <= 200 ? (height - 170) / 30.0 : 1.0)
+                        .opacity(viewModel.getOpacityValue(height, 200, 170))
                 }
-                Text(weatherVM.conditionText)
+                
+                Text(viewModel.conditionText)
                     .font(.system(size: 22))
                     .fontWeight(.medium)
                     .frame(height: 22)
-                    .opacity((height) <= 240 ? (height - 210) / 30.0 : 1.0)
-                Text(weatherVM.highAndLowTemp)
+                    .opacity(viewModel.getOpacityValue(height, 240, 210))
+
+                Text(viewModel.highAndLowTemp)
                     .font(.system(size: 20))
                     .fontWeight(.medium)
                     .frame(height: 20)
-                    .opacity((height) <= 270 ? (height - 240) / 30.0 : 1.0)
+                    .opacity(viewModel.getOpacityValue(height, 270, 240))
             }
             .onAppear {
                 startY = geometry.frame(in: .global).minY
@@ -56,6 +59,10 @@ struct WeatherSummaryView: View {
             .offset(y: offset)
         }
         .frame(width: 300, height: 315, alignment: .center)
+    }
+    
+    init(_ viewModel: WeatherViewModel) {
+        self.viewModel = WeatherSummaryViewModel(viewModel: viewModel)
     }
 }
 

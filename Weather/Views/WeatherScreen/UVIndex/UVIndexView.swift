@@ -9,23 +9,21 @@ import SwiftUI
 
 struct UVIndexView: View {
     
-    @EnvironmentObject private var weatherVM: WeatherViewModel
+    @ObservedObject var viewModel: UVIndexViewModel
     
     var body: some View {
         CustomView(height: 170) {
             VStack(alignment: .leading, spacing: 5) {
-                Text("\(Int(weatherVM.hourlyForecast.first?.uv ?? 0))")
+                Text(viewModel.uv)
                     .font(.largeTitle)
                     .padding(.top, 3)
                 
-                Text(weatherVM.hourlyForecast.first?.getUVSubtitle().0 ?? "")
+                Text(viewModel.shortDescripiton)
                     .font(.title3)
                     .fontWeight(.medium)
                     .padding(.top, -7)
-                
-                let value = (weatherVM.hourlyForecast.first?.uv ?? 0)/11
-                let adjustedValue = value <= 0.02 ? 0.02 : (value == 1.0 ? 0.98 : value)
-                ProgressView(value: adjustedValue)
+
+                ProgressView(value: viewModel.getProgressValue())
                     .progressViewStyle(CustomProgressViewStyle(
                         range: 0.0...1.0,
                         colors: [.green, .yellow, .red, .purple],
@@ -34,7 +32,7 @@ struct UVIndexView: View {
                     .frame(height: 4.5)
                     .padding(.top, 5)
                 
-                Text(weatherVM.hourlyForecast.first?.getUVSubtitle().1 ?? "")
+                Text(viewModel.longDescripiton)
                     .font(.system(size: 15))
                     .frame(height: 36)
                     .padding(.bottom)
@@ -44,6 +42,10 @@ struct UVIndexView: View {
         } header: {
             Label("UV INDEX", systemImage: "sun.max")
         }
+    }
+    
+    init(_ viewModel: WeatherViewModel) {
+        self.viewModel = UVIndexViewModel(viewModel: viewModel)
     }
 }
 

@@ -9,31 +9,33 @@ import SwiftUI
 
 struct WeatherView: View {
     
-    @EnvironmentObject private var weatherVM: WeatherViewModel
+    @EnvironmentObject private var viewModel: WeatherViewModel
     
     var body: some View {
         VStack {
             ScrollView(showsIndicators: false) {
-                WeatherSummaryView()
+                WeatherSummaryView(viewModel)
                 
-                if !weatherVM.loading {
-                    HourlyForecastView()
+                if !viewModel.loading {
+                    HourlyForecastView(viewModel)
                     
-                    DailyForecastView()
+                    DailyForecastView(viewModel)
                     
                     MapForecastView()
                     
                     HStack {
-                        UVIndexView()
-                        SunTrackerView()
+                        UVIndexView(viewModel)
+                        SunTrackerView(viewModel)
                     }
+                    
+                    WindView(viewModel)
                 }
             }
             .frame(maxWidth: .infinity)
             .padding(.horizontal)
             .modifier(ScrollContentBackgroundHiddenModifier())
         }
-        .background(BackgroundView(isNight: $weatherVM.isNight))
+        .background(BackgroundView(isNight: $viewModel.isNight))
     }
 }
 

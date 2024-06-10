@@ -9,24 +9,23 @@ import SwiftUI
 
 struct DailyForecastView: View {
     
-    @EnvironmentObject private var weatherVM: WeatherViewModel
+    @ObservedObject var viewModel: DailyForecastViewModel
     
     var body: some View {
         CustomView(height: 500) {
             VStack(alignment: .leading) {
-                ForEach(weatherVM.results) { forecast in
+                ForEach(viewModel.daylyForecast) { forecast in
                     Divider()
                         .background(.white)
                         .opacity(0.3)
                     
                     HStack() {
-                        Text("\(forecast.getShortDate())")
+                        Text(forecast.getShortDate())
                             .font(.title3)
                             .fontWeight(.medium)
                             .frame(width: 70, alignment: .leading)
 
-                        Image(systemName: forecast.day.condition.getWeatherSF(isDay: weatherVM.results.first?.id == forecast.id ?
-                                                                                     weatherVM.hourlyForecast.first?.is_day : nil))
+                        Image(systemName: viewModel.getWeatherSF(forecast))
                             .renderingMode(.original)
                             .resizable()
                             .scaledToFill()
@@ -34,21 +33,24 @@ struct DailyForecastView: View {
                         
                         Spacer()
                         
-                        Text("\(Int(forecast.day.mintemp_c))˚")
+                        Text(viewModel.getMinTempC(forecast))
                             .font(.title3)
                             .frame(width: 40, alignment: .trailing)
                         
-                        let startRange = (forecast.day.mintemp_c/60.0)/2
-                        let endRange = (forecast.day.maxtemp_c/60.0)*2
-                        ProgressView(value: forecast.day.avgtemp_c/30.0)
+                        ProgressView(value: viewModel.getProgressValue(forecast))
                             .frame(width: 100, height: 5, alignment: .trailing)
                             .progressViewStyle(CustomProgressViewStyle(
-                                range: (startRange)...(endRange > 1.0 ? 1.0 : endRange),
-                                colors: [Color(red: 0.39, green: 0.8, blue: 0.74), Color(red: 0.96, green: 0.8, blue: 0.0)],
-                                isShowProgressPoint: forecast.id == weatherVM.results.first?.id ? true : false)
+                                range: viewModel.getProgressRange(forecast),
+                                colors: [Color(red: 0.39,
+                                               green: 0.8,
+                                               blue: 0.74),
+                                         Color(red: 0.96,
+                                               green: 0.8,
+                                               blue: 0.0)],
+                                isShowProgressPoint: viewModel.getIsShowProgressPoint(forecast))
                             )
                         
-                        Text("\(Int(forecast.day.maxtemp_c))˚")
+                        Text(viewModel.getMaxTempC(forecast))
                             .font(.title3)
                             .frame(width: 40, alignment: .trailing)
                     }
@@ -62,9 +64,12 @@ struct DailyForecastView: View {
             Label("10-DAY FORECAST", systemImage: "calendar")
         }
     }
+    
+    init(_ viewModel: WeatherViewModel) {
+        self.viewModel = DailyForecastViewModel(viewModel: viewModel)
+    }
 }
 
 #Preview {
-    DailyForecastView()
-        .environmentObject(WeatherViewModel())
+    DailyForecastView(WeatherViewModel())
 }

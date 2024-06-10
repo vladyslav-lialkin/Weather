@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HourlyForecastView: View {
     
-    @EnvironmentObject private var weatherVM: WeatherViewModel
+    @ObservedObject var viewModel: HourlyForecastViewModel
     
     var body: some View {
         CustomView(height: 150) {
@@ -20,26 +20,25 @@ struct HourlyForecastView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(weatherVM.hourlyForecast) { forecast in
+                        ForEach(viewModel.hourlyForecast) { forecast in
                             VStack {
                                 Text(forecast.getShortTime())
                                     .font(.system(size: 14))
                                     .fontWeight(.bold)
                                 
-                                let weatherSF = forecast.condition.getWeatherSF(isDay: forecast.is_day)
-                                Image(systemName: weatherSF)
+                                Image(systemName: viewModel.getWeatherSF(forecast))
                                     .renderingMode(.original)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 22,
-                                           height: weatherSF == "cloud.fill" ? 17 : 22,
+                                           height: viewModel.getHeightForWetherSF(forecast),
                                            alignment: .center)
                                     .padding(.vertical, 10)
                                 
-                                Text(" \(Int(forecast.temp_c))˚")
+                                Text(viewModel.getTempC(forecast))
                                     .font(.title3)
                             }
-                            .padding(.trailing, forecast.id == weatherVM.hourlyForecast.last?.id ? 0 : 15)
+                            .padding(.trailing, viewModel.getPaddingValue(forecast))
                         }
                     }
                 }
@@ -50,9 +49,12 @@ struct HourlyForecastView: View {
             Label("HOURLY FORECAST", systemImage: "clock")
         }
     }
+    
+    init(_ viewModel: WeatherViewModel) {
+        self.viewModel = HourlyForecastViewModel(viewModel: viewModel)
+    }
 }
 
 #Preview {
-    HourlyForecastView()
-        .environmentObject(WeatherViewModel())
+    HourlyForecastView(WeatherViewModel())
 }

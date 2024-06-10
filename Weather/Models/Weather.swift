@@ -9,5 +9,6 @@ import Foundation
 
 struct Weather: Codable {
     var location: Location
+    var current: Current
     var forecast: Forecast
 }
