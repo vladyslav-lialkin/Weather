@@ -32,7 +32,7 @@ struct WeatherView: View {
                     
                     HStack {
                         FeelsLikeView(viewModel)
-                        FeelsLikeView(viewModel)
+                        PrecipitationView(viewModel)
                     }
                     
                     DailyForecastView(viewModel)
