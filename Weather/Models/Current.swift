@@ -12,6 +12,7 @@ struct Current: Codable {
     var is_day: Int = 0
     var condition: Condition = Condition(text: "", code: 0)
     var precip_mm: Double = 0.0
+    var humidity: Int = 0
     var wind_kph: Double = 0.0
     var wind_degree: Double = 0.0
     var wind_dir: String = ""

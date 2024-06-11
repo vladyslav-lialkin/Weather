@@ -25,6 +25,8 @@
 		328CF0D52C18A7E20046C7BD /* PrecipitationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328CF0D42C18A7E20046C7BD /* PrecipitationViewModel.swift */; };
 		328CF0D82C18BA560046C7BD /* VisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328CF0D72C18BA560046C7BD /* VisibilityView.swift */; };
 		328CF0DB2C18BAAD0046C7BD /* VisibilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328CF0DA2C18BAAD0046C7BD /* VisibilityViewModel.swift */; };
+		328CF0E12C18E4A40046C7BD /* HumidityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328CF0E02C18E4A40046C7BD /* HumidityView.swift */; };
+		328CF0E32C18E4BC0046C7BD /* HumidityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328CF0E22C18E4BC0046C7BD /* HumidityViewModel.swift */; };
 		32A55A4E2BDE6B5800692FBD /* ScrollContentBackgroundHiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A55A4D2BDE6B5800692FBD /* ScrollContentBackgroundHiddenModifier.swift */; };
 		32A55A502BDEACDA00692FBD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A55A4F2BDEACDA00692FBD /* WeatherViewModel.swift */; };
 		32A55A522BDEB00100692FBD /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A55A512BDEB00100692FBD /* Weather.swift */; };
@@ -72,6 +74,8 @@
 		328CF0D42C18A7E20046C7BD /* PrecipitationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitationViewModel.swift; sourceTree = "<group>"; };
 		328CF0D72C18BA560046C7BD /* VisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityView.swift; sourceTree = "<group>"; };
 		328CF0DA2C18BAAD0046C7BD /* VisibilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityViewModel.swift; sourceTree = "<group>"; };
+		328CF0E02C18E4A40046C7BD /* HumidityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityView.swift; sourceTree = "<group>"; };
+		328CF0E22C18E4BC0046C7BD /* HumidityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityViewModel.swift; sourceTree = "<group>"; };
 		32A55A4D2BDE6B5800692FBD /* ScrollContentBackgroundHiddenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContentBackgroundHiddenModifier.swift; sourceTree = "<group>"; };
 		32A55A4F2BDEACDA00692FBD /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		32A55A512BDEB00100692FBD /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				32D27FAB2C1765C200AE432D /* FeelsLike */,
 				328CF0D12C18A75E0046C7BD /* Precipitation */,
 				328CF0D62C18BA270046C7BD /* Visibility */,
+				328CF0DD2C18E35B0046C7BD /* Humidity */,
 				3230AAFB2C1616C60053074F /* AdditionalViews */,
 			);
 			path = WeatherScreen;
@@ -190,6 +195,7 @@
 				32D27FAE2C1766DC00AE432D /* FeelsLikeViewModel.swift */,
 				328CF0D42C18A7E20046C7BD /* PrecipitationViewModel.swift */,
 				328CF0DA2C18BAAD0046C7BD /* VisibilityViewModel.swift */,
+				328CF0E22C18E4BC0046C7BD /* HumidityViewModel.swift */,
 			);
 			path = WeatherScreen;
 			sourceTree = "<group>";
@@ -250,6 +256,14 @@
 				328CF0D72C18BA560046C7BD /* VisibilityView.swift */,
 			);
 			path = Visibility;
+			sourceTree = "<group>";
+		};
+		328CF0DD2C18E35B0046C7BD /* Humidity */ = {
+			isa = PBXGroup;
+			children = (
+				328CF0E02C18E4A40046C7BD /* HumidityView.swift */,
+			);
+			path = Humidity;
 			sourceTree = "<group>";
 		};
 		32A55A462BDE6A6000692FBD /* Views */ = {
@@ -442,6 +456,7 @@
 				3230AAFA2C1600F10053074F /* WeatherSummaryViewModel.swift in Sources */,
 				32B6CDA32C061F2700B0B61A /* UVIndexView.swift in Sources */,
 				3230AB032C161C670053074F /* DailyForecastViewModel.swift in Sources */,
+				328CF0E32C18E4BC0046C7BD /* HumidityViewModel.swift in Sources */,
 				32D27FAF2C1766DC00AE432D /* FeelsLikeViewModel.swift in Sources */,
 				32A55A522BDEB00100692FBD /* Weather.swift in Sources */,
 				3230AAF52C15FEAB0053074F /* DashCircle.swift in Sources */,
@@ -466,6 +481,7 @@
 				32B6E63B2C0B66FE0057F039 /* Astro.swift in Sources */,
 				3230AAF72C15FF780053074F /* ArrowShape.swift in Sources */,
 				32D27FAD2C1765F200AE432D /* FeelsLikeView.swift in Sources */,
+				328CF0E12C18E4A40046C7BD /* HumidityView.swift in Sources */,
 				32ED50D02C17262000EE77BD /* WindViewModel.swift in Sources */,
 				328CF0D82C18BA560046C7BD /* VisibilityView.swift in Sources */,
 				324AE9DD2C121F690053C4AC /* Current.swift in Sources */,
