@@ -15,19 +15,19 @@ class PrecipitationViewModel: ObservableObject {
     init(viewModel: WeatherViewModel) {
         if let weather = viewModel.weather {
             let precip_mm = weather.current.precip_mm
-            precipMm = "\(Int(precip_mm))"
+            precipMm = "\(Int(precip_mm)) mm"
 
             precipMmDescription = {
                 switch precip_mm {
-                case ..<0.0:
+                case ...0.0:
                     return "No precipitation."
-                case ..<2.5:
+                case 0.1...2.5:
                     return "Light rain or drizzle."
-                case ..<7.6:
+                case 2.6...7.6:
                     return "Moderate rain."
-                case ..<50:
+                case 7.7...50:
                     return "Heavy rain."
-                case ..<50:
+                case 51... :
                     return "Very heavy rain or downpour."
                 default:
                     return "Very heavy rain or downpour."
