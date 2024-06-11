@@ -19,19 +19,20 @@ struct PrecipitationView: View {
                     .frame(alignment: .top)
                     .padding(.top, 3)
                 
-                Spacer()
-                Spacer()
-                Spacer()
+                Text("in last 6h")
+                    .font(.title)
+                    .padding(.top, -10)
                 
                 Text(viewModel.precipMmDescription)
                     .font(.system(size: 15))
                     .frame(height: 36, alignment: .bottom)
                     .padding(.bottom)
+                    .padding(.top, 10)
             }
             .foregroundStyle(.white)
             .padding(.horizontal)
         } header: {
-            Label("FEELS LIKE", systemImage: "thermometer.medium")
+            Label("PRECIPITATION", systemImage: "drop.fill")
         }
     }
     

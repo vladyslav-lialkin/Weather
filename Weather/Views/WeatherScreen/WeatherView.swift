@@ -35,7 +35,11 @@ struct WeatherView: View {
                         PrecipitationView(viewModel)
                     }
                     
-                    DailyForecastView(viewModel)
+                    HStack {
+                        VisibilityView(viewModel)
+                        PrecipitationView(viewModel)
+                    }
+                    
                     DailyForecastView(viewModel)
                     DailyForecastView(viewModel)
                 }

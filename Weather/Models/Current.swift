@@ -16,6 +16,7 @@ struct Current: Codable {
     var wind_degree: Double = 0.0
     var wind_dir: String = ""
     var feelslike_c: Double = 0.0
+    var vis_km: Double = 0.0
     var gust_kph: Double = 0.0
     var uv: Double = 0.0
 }

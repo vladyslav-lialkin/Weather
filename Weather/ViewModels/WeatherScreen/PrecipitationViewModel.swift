@@ -15,7 +15,8 @@ class PrecipitationViewModel: ObservableObject {
     init(viewModel: WeatherViewModel) {
         if let weather = viewModel.weather {
             let precip_mm = weather.current.precip_mm
-            precipMm = "\(Int(precip_mm)) mm"
+            let roundedPrecip = precip_mm > 0.0 ? String(format: "%.1f", precip_mm) : "\(Int(precip_mm))"
+            precipMm = roundedPrecip + " mm"
 
             precipMmDescription = {
                 switch precip_mm {

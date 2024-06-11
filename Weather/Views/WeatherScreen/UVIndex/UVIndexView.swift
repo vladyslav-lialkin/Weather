@@ -35,6 +35,7 @@ struct UVIndexView: View {
                 Text(viewModel.longDescripiton)
                     .font(.system(size: 15))
                     .frame(height: 36)
+                    .padding(.top, 3)
                     .padding(.bottom)
             }
             .foregroundStyle(.white)
