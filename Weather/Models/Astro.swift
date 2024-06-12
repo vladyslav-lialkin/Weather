@@ -7,32 +7,29 @@
 
 import Foundation
 
+enum AstroEnum {
+    case sun
+    case moon
+}
+
 struct Astro: Codable {
-    var sunrise: String
-    var sunset: String
+    var sunrise: String = ""
+    var sunset: String = ""
+    var moonrise: String = ""
+    var moonset: String = ""
+    var moon_phase: String = ""
+    var moon_illumination: Int = 0
     
-    func convertTo24HourFormat() -> (sunrise: String, sunset: String) {
+    func convertTo24HourFormat(astro: AstroEnum) -> (rise: String, set: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         
-        if let sunriseDate = dateFormatter.date(from: sunrise), let sunsetDate = dateFormatter.date(from: sunset) {
+        if let astroRiseDate = dateFormatter.date(from: astro == .sun ? sunrise : moonrise),
+           let astroSetDate = dateFormatter.date(from: astro == .sun ? sunset : moonset) {
             dateFormatter.dateFormat = "HH:mm"
-            return (dateFormatter.string(from: sunriseDate), dateFormatter.string(from: sunsetDate))
+            return (dateFormatter.string(from: astroRiseDate), dateFormatter.string(from: astroSetDate))
         }
         return ("", "")
-    }
-
-    func isSunRisingOrSetting() -> (time: String, isSunrise: Bool) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:MM"
-        let currentTime = dateFormatter.string(from: Date())
-        let (sunriseTime, sunsetTime) = convertTo24HourFormat()
-        
-        if currentTime > sunriseTime && currentTime <= sunsetTime {
-            return (sunsetTime, false) // false means sunset
-        } else {
-            return (sunriseTime, true) // true means sunrise
-        }
     }
 }

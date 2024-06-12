@@ -40,8 +40,7 @@ struct WeatherView: View {
                         HumidityView(viewModel)
                     }
                     
-                    DailyForecastView(viewModel)
-                    DailyForecastView(viewModel)
+                    MoonTrackerView(viewModel)
                 }
             }
             .frame(maxWidth: .infinity)
