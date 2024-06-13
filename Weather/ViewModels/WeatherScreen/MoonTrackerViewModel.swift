@@ -20,7 +20,7 @@ class MoonTrackerViewModel: ObservableObject {
     }
     
     var moonPhase: String {
-        astro.moon_phase.lowercased()
+        astro.moon_phase.uppercased()
     }
     
     var illumination: String {

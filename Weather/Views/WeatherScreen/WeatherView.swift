@@ -41,6 +41,11 @@ struct WeatherView: View {
                     }
                     
                     MoonTrackerView(viewModel)
+                    
+                    HStack {
+                        AveragesView(viewModel)
+                        AveragesView(viewModel)
+                    }
                 }
             }
             .frame(maxWidth: .infinity)
