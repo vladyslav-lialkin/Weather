@@ -14,15 +14,15 @@ struct WindCompassView: View {
     
     var body: some View {
         ZStack {
-            DashCircle(degrees: 3)
+            DashCircle(degrees: 3, dashLength: 8)
                 .stroke(Color.white, lineWidth: 1)
                 .opacity(0.12)
             
-            DashCircle(degrees: 30)
+            DashCircle(degrees: 30, dashLength: 8)
                 .stroke(Color.white, lineWidth: 1)
                 .opacity(0.08)
             
-            DashCircle(degrees: 90)
+            DashCircle(degrees: 90, dashLength: 8)
                 .stroke(Color.white, lineWidth: 2)
                 .opacity(0.11)
             

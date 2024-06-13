@@ -15,7 +15,7 @@ struct WeatherView: View {
         VStack {
             ScrollView(showsIndicators: false) {
                 WeatherSummaryView(viewModel)
-                
+//                
                 if !viewModel.loading {
                     HourlyForecastView(viewModel)
                     
@@ -44,8 +44,11 @@ struct WeatherView: View {
                     
                     HStack {
                         AveragesView(viewModel)
-                        AveragesView(viewModel)
+                        PressureView(viewModel)
                     }
+                    
+                    VStack {}
+                        .frame(height: 100)
                 }
             }
             .frame(maxWidth: .infinity)
