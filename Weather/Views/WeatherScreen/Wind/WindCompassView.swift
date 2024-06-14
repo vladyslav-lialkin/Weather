@@ -68,12 +68,12 @@ struct WindCompassView: View {
                     .frame(width: 8, height: 10)
                     .clipShape(.rect(cornerRadius: 2))
                 Rectangle()
-                    .frame(width: 2)
+                    .frame(width: 2, height: 109)
                     .padding(.top, -5)
                 
                 Circle()
                     .stroke(.white, lineWidth: 2.0)
-                    .frame(width: 5)
+                    .frame(width: 5, height: 5)
                     .padding(.bottom, 1.5)
             }
             .foregroundStyle(.white)
