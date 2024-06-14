@@ -15,7 +15,7 @@ struct WeatherView: View {
         VStack {
             ScrollView(showsIndicators: false) {
                 WeatherSummaryView(viewModel)
-//                
+                
                 if !viewModel.loading {
                     HourlyForecastView(viewModel)
                     
@@ -47,8 +47,25 @@ struct WeatherView: View {
                         PressureView(viewModel)
                     }
                     
-                    VStack {}
-                        .frame(height: 100)
+                    VStack {
+                        Text("Weather for " + viewModel.cityName)
+                            .font(.callout.bold())
+                        
+                        HStack(spacing: 3) {
+                            Text("Here is the site from which I took the API")
+                            
+                            Button {
+                                UIApplication.shared.open(URL(string: "https://www.weatherapi.com")!)
+                            } label: {
+                                Text("WeatherApi")
+                                    .underline()
+                            }
+                        }
+                        .font(.caption.bold())
+                        .opacity(0.4)
+                    }
+                    .foregroundColor(.white)
+                    .frame(height: 100)
                 }
             }
             .frame(maxWidth: .infinity)

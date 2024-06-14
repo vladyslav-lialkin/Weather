@@ -9,6 +9,7 @@ import SwiftUI
 
 class WeatherViewModel: ObservableObject {
     
+    @Published var cityName = String()
     @Published var isNight = false
     @Published var loading = true
     
@@ -30,6 +31,8 @@ class WeatherViewModel: ObservableObject {
         DispatchQueue.main.async { [self] in
             if let weather {
                 dump(weather)
+                
+                cityName = weather.location.name
                 
                 isNight = weather.current.is_day == 0 ? true : false
                 loading = false
