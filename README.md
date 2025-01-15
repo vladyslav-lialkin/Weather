@@ -1,8 +1,11 @@
-# Weather
+# Weather clone
 
 ## Overview
 
-<div style="width: 1000px; height 600px;"><img src="https://github.com/vladyslav-lialkin/Weather/assets/64835724/2bf3c114-e1ae-4956-a5ba-c04629d591fe" width="30%" height="30%" align="right"></div>
+<p align="center">
+<img src="https://github.com/user-attachments/assets/f675e76e-d5b4-46f2-b841-f4551c038dfc" width="930" title="DMV Test Prep">
+
+</p>
 
 Weather is a weather app that is identical to the one in iOS 17, built with SwiftUI! Get the current weather from London!
 The application includes:
